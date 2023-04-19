@@ -9,5 +9,10 @@ doubler_test: doubler_test.o
 test: doubler_test
 	./$<
 
+clean:
+	rm -f *.o doubler_test
+
 %.o: %.cc
 	$(CXX) -c $(CXXFLAGS) -o $@ $<
+
+.PHONY: all test clean
